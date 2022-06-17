@@ -1,21 +1,21 @@
 package com.anahuac.calidad.tareasErik;
 
 public class Prueba {
-	private float ultimoResultado;
+	private double ultimoResultado;
 	
-	public float suma(float primerSumando, float segundoSumando) {
+	public double suma(double primerSumando, double segundoSumando) {
 		return ultimoResultado = primerSumando + segundoSumando;
 	}
 	
-	public float resta(float minuendo, float sustraendo) {
+	public double resta(double minuendo, double sustraendo) {
 		return ultimoResultado = minuendo - sustraendo;
 	}
 	
-	public float multiplicacion(float primerFactor, float segundoFactor) {
+	public double multiplicacion(double primerFactor, double segundoFactor) {
 		return ultimoResultado = primerFactor*segundoFactor;
 	}
 	
-	public float division(float dividendo, float divisor) throws ArithmeticException{
+	public double division(double dividendo, double divisor) throws ArithmeticException{
 		if(divisor ==0)
 			throw new ArithmeticException("La division entre cero no esta permitida");
 		else
@@ -23,7 +23,7 @@ public class Prueba {
 		return ultimoResultado = dividendo/divisor;
 	}
 	
-	public float getUltimaResultado() {
+	public double getUltimaResultado() {
 		return ultimoResultado;
 	}
-}
+} 
