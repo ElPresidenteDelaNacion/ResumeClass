@@ -19,6 +19,8 @@ public class AsTwoMyTest {
 Dependency dependency;
 	
 	
+
+
 	@Before
 	public void setUp() throws Exception {
 		dependency = Mockito.mock(Dependency.class);

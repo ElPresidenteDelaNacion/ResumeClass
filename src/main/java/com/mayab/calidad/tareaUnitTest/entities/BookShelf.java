@@ -1,5 +1,7 @@
 package com.mayab.calidad.tareaUnitTest.entities;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.time.Year;
 import java.util.*;
 import java.util.function.Function;
@@ -23,13 +25,15 @@ public class BookShelf {
     public List<Book> books() {
         return Collections.unmodifiableList(books);
     }
-
+    
     public void add(Book bookToAdd) throws BookShelfCapacityReached {
         
             if (books.size() == capacity) {
                 throw new BookShelfCapacityReached(String.format("BookShelf capacity of %d is reached. You can't add more books.", this.capacity));
             }
             books.add(bookToAdd);
+            //int n = bookshelf.add().size
+            //return books.size();
         
     }
 
@@ -42,6 +46,7 @@ public class BookShelf {
     public List<Book> sortByAuthor() {
         return null;
     }
+    
     public List<Book> arrange(Comparator<Book> comparator) {
         return books
                 .stream()

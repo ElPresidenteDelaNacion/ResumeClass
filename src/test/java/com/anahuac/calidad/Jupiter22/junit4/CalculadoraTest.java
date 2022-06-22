@@ -32,7 +32,6 @@ public class CalculadoraTest {
 	@Test
 	public void testSuma() {
 		double resultadoEsperado=3;
-		//Prueba p = new Prueba();
 		//Ejercicio del codigo
 		double resultadoEjecucion= p.suma(1,2);
 		//Verificacion
