@@ -18,17 +18,11 @@ public class TestBookShelf {
 	
 	public BookShelf bookShelfExc;
 	public BookShelf bookShelfAdd;
-	public BookShelf bookShelfArr;
-	public Book libro;
-	public BookShelfCapacityReached BSCR;
-	public String title;
-	public String author;
-	public LocalDate publishedOn;
-
+	
+	
 	@Before
 	public void setUp() throws Exception {
 		bookShelfAdd = new BookShelf();
-		libro = new Book(title, author, publishedOn);
 		bookShelfExc = new BookShelf(3);
 	}
 
@@ -39,14 +33,14 @@ public class TestBookShelf {
 	@Test
 	public void testAdd() {
 		
-		LocalDate fechaActual = LocalDate.of(2019, Month.JANUARY, 1);
-		Book newBook1 = new Book("Don Quijote","Miguel de Cervantes",fechaActual);
-		Book newBook2 = new Book("Don ","Miguel",fechaActual);
+		LocalDate fechaPublicacion = LocalDate.of(2020, Month.DECEMBER, 18);
+		Book newBook1 = new Book("Don Quijote","Miguel de Cervantes",fechaPublicacion);
+		Book newBook2 = new Book("Don ","Miguel",fechaPublicacion);
 		bookShelfAdd.add(newBook1);
 		bookShelfAdd.add(newBook2);
-		System.out.println(newBook1);
+		//System.out.println(newBook1);
 		int nLibro = bookShelfAdd.books().size();
-		System.out.println(newBook2);
+		//System.out.println(newBook2);
 		 
 		assertThat(nLibro, is(2));
 	}
@@ -54,43 +48,37 @@ public class TestBookShelf {
 	@Test(expected=BookShelfCapacityReached.class)
 	public void testAddExcepción() {
 		
-		LocalDate fechaActual = LocalDate.of(2019, Month.JANUARY, 1);
-		Book newBook1 = new Book("Don Quijote","Miguel de Cervantes",fechaActual);
-		Book newBook2 = new Book("Don ","Miguel",fechaActual);
-		Book newBook3 = new Book("Don ","Miguel",fechaActual);
-		Book newBook4 = new Book("Don ","Miguel",fechaActual);
-		Book newBook5 = new Book("Don ","Miguel",fechaActual);
+		LocalDate fechaPublicacion = LocalDate.of(2019, Month.JANUARY, 1);
+		Book newBook1 = new Book("ATravezDeMi","Miguel Angel",fechaPublicacion);
+		Book newBook2 = new Book("NuncaMas","Donatelo",fechaPublicacion);
+		Book newBook3 = new Book("DonQuijote","Rafaelo",fechaPublicacion);
+		Book newBook4 = new Book("Cumbres","Emily",fechaPublicacion);
+		Book newBook5 = new Book("Mujercitas ","Louisa",fechaPublicacion);
 		bookShelfExc.add(newBook1);
-		System.out.println(newBook1);
+		//System.out.println(newBook1);
 		bookShelfExc.add(newBook2);
-		System.out.println(newBook2);
+		//System.out.println(newBook2);
 		bookShelfExc.add(newBook3);
-		System.out.println(newBook3);
+		//System.out.println(newBook3);
 		bookShelfExc.add(newBook4);
-		System.out.println(newBook4);
+		//System.out.println(newBook4);
 		bookShelfExc.add(newBook5);
 		int nLibro = bookShelfAdd.books().size();
-		System.out.println(newBook5);
-		
-		 
-		//assertThat(nLibro, is(3));
+		//System.out.println(newBook5);
 	}
 
 	
 	@Test
 	public void testArrange () {
-		LocalDate fechaActual = LocalDate.of(2019, Month.JANUARY, 1);
-		Book newBook1 = new Book("A travez de mi ventana","Miguel Angel",fechaActual);
-		Book newBook2 = new Book("Nunca mas ","Donatelo",fechaActual);
-		Book newBook3 = new Book("Don Quijote","Rafaelo",fechaActual);
+		LocalDate fechaPublicacion = LocalDate.of(2016, Month.FEBRUARY, 26);
+		Book newBook1 = new Book("A travez de mi ventana","Miguel Angel",fechaPublicacion);
+		Book newBook2 = new Book("Nunca mas ","Donatelo",fechaPublicacion);
+		Book newBook3 = new Book("Don Quijote","Rafaelo",fechaPublicacion);
 		bookShelfAdd.add(newBook2);
 		bookShelfAdd.add(newBook1);
 		bookShelfAdd.add(newBook3);
 		List<Book> orden =bookShelfAdd.arrange();
-		System.out.println(orden);
-		assertThat(bookShelfAdd.arrange(), is(orden));
-		
+		//System.out.println(orden);
+		assertThat(bookShelfAdd.arrange(), is(orden));	
 	}
-
-
 }
