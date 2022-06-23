@@ -77,7 +77,7 @@ public class TestBookShelf {
 		bookShelfAdd.add(newBook2);
 		bookShelfAdd.add(newBook1);
 		bookShelfAdd.add(newBook3);
-		List<Book> orden =bookShelfAdd.arrange();
+		List<Book> orden = bookShelfAdd.arrange();
 		//System.out.println(orden);
 		assertThat(bookShelfAdd.arrange(), is(orden));	
 	}

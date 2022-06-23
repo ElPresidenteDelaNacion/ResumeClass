@@ -9,7 +9,7 @@ public class MockUsuarioDAO implements UsuarioDAO {
 	}
 
 	@Override
-	public boolean BorrarUsuario(int a) {
+	public boolean borrarUsuario(int a) {
 		// TODO Auto-generated method stub
 		return false;
 	}
